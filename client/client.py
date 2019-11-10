@@ -9,8 +9,8 @@ def current_time():
 
 def display_current_time():
     while True:
-        formatted_time = current_time().strftime('%c')
-        print(formatted_time, end="", flush=True)
+        formatted_time = current_time().strftime('%b %d %Y %H:%M:%S %p')
+        print('The current local time is: ' + formatted_time, end="", flush=True)
         print("\r", end="", flush=True)
         time.sleep(1)
 
