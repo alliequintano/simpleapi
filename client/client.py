@@ -9,7 +9,11 @@ def current_time():
     formatted_time = unformatted_time.strftime('The current time is %I:%M:%S %p on %B %d, %Y.')
     return formatted_time
 
-while True:
-    print(current_time(), end="", flush=True)
-    print("\r", end="", flush=True)
-    time.sleep(1)
+def display_current_time():
+    while True:
+        print(current_time(), end="", flush=True)
+        print("\r", end="", flush=True)
+        time.sleep(1)
+
+if __name__ == '__main__':
+    display_current_time()
