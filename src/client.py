@@ -1,14 +1,15 @@
-from flask import Flask
-import requests
+import requests, time
+from datetime import datetime
 
-app = Flask(__name__)
-
-@app.route('/')
 def current_time():
-    response = requests.get('http://127.0.0.1:5001/')
+    response = requests.get('http://127.0.0.1:5000/current-time')
     json_object = response.json()
-    time = json_object['currentTime']
-    return time
+    datetime_object = json_object['currentTime']
+    unformatted_time = datetime.strptime(datetime_object, '%Y-%m-%d %H:%M:%S')
+    formatted_time = unformatted_time.strftime('The current time is %I:%M:%S %p on %B %d, %Y.')
+    return formatted_time
 
-if __name__ == '__main__':
-    app.run(debug=True)
+while True:
+    print(current_time(), end="", flush=True)
+    print("\r", end="", flush=True)
+    time.sleep(1)
