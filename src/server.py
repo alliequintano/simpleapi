@@ -8,8 +8,7 @@ api = Api(app)
 class CurrentTime(Resource):
     def get(self):
         current_time = datetime.now()
-        formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')
-        return {'currentTime': formatted_time }
+        return {'currentTime': str(current_time)}
 
 api.add_resource(CurrentTime, '/current-time')
 

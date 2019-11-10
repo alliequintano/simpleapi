@@ -5,7 +5,7 @@ def current_time():
     response = requests.get('http://127.0.0.1:5000/current-time')
     json_object = response.json()
     datetime_object = json_object['currentTime']
-    unformatted_time = datetime.strptime(datetime_object, '%Y-%m-%d %H:%M:%S')
+    unformatted_time = datetime.strptime(datetime_object, '%Y-%m-%d %H:%M:%S.%f')
     formatted_time = unformatted_time.strftime('The current time is %I:%M:%S %p on %B %d, %Y.')
     return formatted_time
 
