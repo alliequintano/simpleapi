@@ -9,4 +9,4 @@ def create_app():
 
     api.add_resource(CurrentTime, '/current-time')
 
-    return api
+    return server
