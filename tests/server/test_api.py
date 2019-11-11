@@ -1,6 +1,6 @@
 import pytest, json
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from src.server import create_app
 
@@ -23,7 +23,14 @@ def test_get_current_time_json_schema(test_client):
     assert 'currentTime' in data
     assert datetime.strptime(data['currentTime'], '%Y-%m-%d %H:%M:%S.%f')
 
-#def test_get_current_time_value(test_client):
+def test_get_current_time_value(test_client):
+    response = test_client.get('http://127.0.0.1:5000/current-time')
+    data = json.loads(response.data)
+    
+    current_time_value = datetime.strptime(data['currentTime'], '%Y-%m-%d %H:%M:%S.%f')
+    later_time = datetime.now()
+
+    assert (later_time - current_time_value) < timedelta(seconds=1)
 
 
 
