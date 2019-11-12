@@ -11,19 +11,19 @@ def test_client():
 
     yield testing_client
 
-def test_get_current_time_status_code(test_client):
+def test_current_time_get_status_code(test_client):
     response = test_client.get('http://127.0.0.1:5000/current-time')
 
     assert response.status_code == 200
 
-def test_get_current_time_json_schema(test_client):
+def test_current_time_json_schema(test_client):
     response = test_client.get('http://127.0.0.1:5000/current-time')
     data = json.loads(response.data)
     
     assert 'currentTime' in data
     assert datetime.strptime(data['currentTime'], '%Y-%m-%d %H:%M:%S.%f')
 
-def test_get_current_time_value(test_client):
+def test_current_time_value(test_client):
     response = test_client.get('http://127.0.0.1:5000/current-time')
     data = json.loads(response.data)
     
