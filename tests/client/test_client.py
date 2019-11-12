@@ -15,7 +15,7 @@ def test_http_error_response(requests_mock):
 
     assert isinstance(error, requests.exceptions.HTTPError)
 
-def test_http_error(requests_mock):
+def test_connection_error(requests_mock):
     requests_mock.get('http://127.0.0.1:5000/current-time', exc=requests.exceptions.ConnectionError)
     error = get_current_time()
 
