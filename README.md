@@ -23,7 +23,7 @@ _Note for Windows users: replace the virtual environment activation command abov
 
 ## Run
 
-To run the client and server together:
+#### To run the client and server together:
 ```
 $ ./run.sh
 ```
