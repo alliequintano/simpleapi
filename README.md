@@ -15,7 +15,7 @@ The commands below set everything up to run the client and server:
 ```
 $ git clone https://github.com/alliequintano/simpleapi.git
 $ cd simpleapi
-$ virtualenv venv
+$ virtualenv -p python3.7 venv
 $ . venv/bin/activate
 (venv) pip install -r requirements.txt
 (venv) ./install_client.sh
