@@ -27,7 +27,8 @@ _Note for Windows users: replace the virtual environment activation command abov
 ```
 $ ./run.sh
 ```
-_Note: the server will run in the background. Use `ps ax | grep run_server.py` and `kill PID` or `pkill -f run_server.py` to stop server when you're done._
+_Note: the server will run in the background.\
+Use `ps ax | grep run_server.py` and `kill PID` or `pkill -f run_server.py` to stop server when you're done._
 
 #### To run the server by itself:
 ```
