@@ -1,4 +1,5 @@
 # simpleapi
+[![Build Status](https://travis-ci.com/alliequintano/simpleapi.svg?branch=master)](https://travis-ci.com/alliequintano/simpleapi)
 
 Creates a simple web service that returns the current time as JSON data. Includes a CLI client application that connects to the web service, parses the response, and displays the time.
 
