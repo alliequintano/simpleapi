@@ -26,19 +26,19 @@ _Note for Windows users: replace the virtual environment activation command abov
 
 #### To run the client and server together:
 ```
-$ ./run.sh
+./run.sh
 ```
 _Note: the server will run in the background.\
 Use `ps ax | grep run_server.py` and `kill PID` or `pkill -f run_server.py` to stop server when you're done._
 
 #### To run the server by itself:
 ```
-$ python run_server.py
+python run_server.py
 ```
 
 #### To run the CLI client:
 ```
-$ client
+(venv) client
 Usage: client [OPTIONS] COMMAND
 
   A CLI wrapper for the client clock application.
@@ -49,7 +49,7 @@ Options:
 Commands:
   clock   Display the current time.
  
-$ client clock
+(venv) client clock
     
 ```
 
