@@ -4,9 +4,9 @@ def get_current_time():
     try:
         response = requests.get('http://127.0.0.1:5000/current-time')
         response.raise_for_status()
-    except requests.exceptions.ConnectionError as error:
-        return error
-    except requests.exceptions.HTTPError as error:
+    except (requests.exceptions.ConnectionError, \
+            requests.exceptions.ConnectTimeout, \
+            requests.exceptions.HTTPError) as error:
         return error
     else:
         json_object = response.json()

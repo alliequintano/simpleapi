@@ -21,3 +21,9 @@ def test_connection_error(requests_mock):
 
     assert isinstance(error, requests.exceptions.ConnectionError)
 
+def test_timeout_error(requests_mock):
+    requests_mock.get('http://127.0.0.1:5000/current-time', exc=requests.exceptions.ConnectTimeout)
+    error = get_current_time()
+
+    assert isinstance(error, requests.exceptions.ConnectTimeout)
+
