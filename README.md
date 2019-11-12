@@ -19,19 +19,20 @@ $ . venv/bin/activate
 (venv) pip install -r requirements.txt
 (venv) ./install_client.sh
 ```
-Note for Windows users: replace the virtual environment activation command above with `venv\Scripts\activate`.
+_Note for Windows users: replace the virtual environment activation command above with `venv\Scripts\activate`._
 
 ## Run
 
 To run the client and server together:
-
-`$ ./run.sh`
-
-Note: the server will run in the background. Use `ps ax | grep run_server.py` and `kill PID` or `pkill -f run_server.py` to stop server when you're done.
+```
+$ ./run.sh
+```
+_Note: the server will run in the background. Use `ps ax | grep run_server.py` and `kill PID` or `pkill -f run_server.py` to stop server when you're done._
 
 #### To run the server by itself:
-
-`$ python run_server.py`
+```
+$ python run_server.py
+```
 
 #### To run the CLI client:
 ```
