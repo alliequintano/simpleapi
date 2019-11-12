@@ -18,10 +18,11 @@ def display_current_time():
         unformatted_time = get_current_time()
         if isinstance(unformatted_time, datetime.datetime):
             formatted_time = unformatted_time.strftime('%b %d %Y %I:%M:%S %p')
-            print('The current local time is: ' + formatted_time, end='', flush=True)
+            print('\033[2KThe current local time is: ' + formatted_time, end='', flush=True)
             print('\r', end='', flush=True)
             time.sleep(1)
         else:
-            print('sad times')
-            sys.exit(1)
+            print('\033[2KSomething went wrong, make sure the server is up and running! I will wait.', end='', flush=True)
+            print('\r', end='', flush=True)
+            time.sleep(1)
 
